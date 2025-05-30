@@ -1,12 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Charity: Water – Water justice = climate justice</title>
+
+  <!-- Font (feel free to change) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Reset & Theme Tokens -->
+  <style>
+    :root {
+      --yellow: #FFC907; /* brand yellow */
+      --navy: #2E9DF7;   /* brand navy */
+      --white: #ffffff;
+      --text-dark: #0d1b2a;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", sans-serif;
+    }
+  </style>
+
+  <!-- Page Styles -->
+  <style>
+    body {
+      color: var(--text-dark);
+      line-height: 1.6;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 1rem 2rem;
+      width: 100%;
+    }
+    header img.logo {
+      height: 32px;
+    }
+
+    /* ---------- Hero Section ---------- */
+    .hero {
+      position: relative;
+      min-height: 70vh;
+      background-image: url("assets/placeholder-hero.jpg"); /* ← replace */
+      background-size: cover;
+      background-position: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      color: var(--white);
+    }
+
+    p.lead {
+      max-width: 45ch;
+      margin-top: 1rem;
+      color: var(--white);
+      font-size: clamp(0.9rem, 1.4vw, 1.25rem);
+    }
+
+    /* ---------- CTA Blob & Button ---------- */
+    .cta-blob {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 280px;
+      height: 100%;
+      max-height: 450px;
+      background: var(--navy);
+      border-top-left-radius: 140px;
+      border-bottom-left-radius: 140px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .donate {
+      background: var(--yellow);
+      border: none;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      border-radius: 16px;
+      cursor: pointer;
+      transition: filter 0.2s ease;
+    }
+    .donate:hover {
+      filter: brightness(90%);
+    }
+
+    /* ---------- Mobile Tweaks ---------- */
+    @media (max-width: 768px) {
+      .cta-blob {
+        position: static;
+        width: 100%;
+        height: auto;
+        border-radius: 0;
+        padding: 2rem 0;
+        margin-top: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-    <!-- Add your HTML here -->
+  <!-- Header -->
+  <header>
+    <img src="assets/logo-icon.png" alt="Charity: Water logo icon" class="logo" />
+    <strong>Charity: Water</strong>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Water justice = climate justice</h1>
+    <p class="lead">
+      We build climate‑resilient water projects that empower frontline
+      communities in the face of environmental hardship.
+    </p>
+
+    <div class="cta-blob">
+      <button class="donate">Give&nbsp;Now</button>
+    </div>
+  </section>
 </body>
 </html>
