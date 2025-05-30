@@ -1,19 +1,81 @@
-/* charity: water Brand Colors & Fonts
-
-Primary Colors:
-- Yellow:     #FFC907
-- Blue:       #2E9DF7
-
-Secondary Colors:
-- Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
-
-Fonts:
-- Proxima Nova
-- Avenir
-
+/* 
+charity: water Brand Colors & Fonts 
 */
+
+/* Primary Colors */
+:root {
+  --yellow: #FFC907;    /* Yellow */
+  --blue: #2E9DF7;      /* Blue */
+
+  /* Secondary Colors */
+  --light-blue: #8BD1CB; /* Light Blue */
+  --green: #4FCB53;      /* Green */
+  --orange: #FF902A;     /* Orange */
+  --red: #F5402C;        /* Red */
+  --dark-green: #159A48; /* Dark Green */
+  --pink: #F16061;       /* Pink */
+
+  /* Fonts */
+  --main-font: 'Avenir', Arial, sans-serif; /* Fallback fonts for beginners */
+}
+
+
+/* Example: Style headings with blue */
+h1, h2, h3 {
+  color: var(--blue); /* Use the primary blue color for headings */
+}
+
+/* Example: Style links with orange */
+a {
+  color: var(--orange); /* Use the secondary orange color for links */
+}
+
+/* Hero section styles */
+.hero {
+  /* Add space above and below the hero */
+  padding: 40px 0;
+  /* Center the content horizontally */
+  text-align: center;
+  /* Optional: set a background color for the hero section */
+  background-color: var(--yellow); /* Uses the yellow brand color */
+}
+
+/* Style the header image */
+.hero img {
+  /* Make the image responsive */
+  width: 80%;        /* Image takes up 80% of the container's width */
+  max-width: 600px;  /* But not bigger than 600px */
+  height: auto;      /* Keep the image's aspect ratio */
+  display: block;    /* Remove extra space below the image */
+  margin: 0 auto;    /* Center the image */
+  /* Add a simple shadow for effect */
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+}
+
+/* Big picture section styles */
+.big_picture {
+  /* Makes the section full width */
+  width: 100%;
+  /* Sets a max width so it fits nicely on a computer screen */
+  max-width: 900px; /* You can adjust this value */
+  /* Centers the section on the page */
+  margin: 0 auto 20px auto;
+  /* Makes the section tall */
+  height: 300px;
+  /* Hides any part of the image that is too big */
+  overflow: hidden;
+  /* Centers the image if it's smaller than the box */
+  text-align: center;
+}
+
+/* Style the image inside the big_picture section */
+.big_picture img {
+  /* Make the image fill the section horizontally */
+  width: 50%;
+  /* Make the image fill the section vertically */
+  height: 50%;
+  /* Keeps the image from stretching and fills the area nicely */
+  object-fit: cover;
+  
+}
+}

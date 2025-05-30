@@ -1,141 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Charity: Water – Water justice = climate justice</title>
-
-  <!-- Font (feel free to change) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
-    rel="stylesheet"
-  />
-
-  <!-- Reset & Theme Tokens -->
+  <meta charset="UTF-8">
+  <title>Charity Water Landing Page</title>
   <style>
-    :root {
-      --yellow: #FFC907; /* brand yellow */
-      --navy: #2E9DF7;   /* brand navy */
-      --white: #ffffff;
-      --text-dark: #0d1b2a;
-    }
-    * {
+    /* Set a background color and font for the whole page */
+    body {
+      background-color: #e6f7ff;
+      font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      min-height: 100vh; /* Make sure the page fills the screen */
       box-sizing: border-box;
-      font-family: "Inter", sans-serif;
-    }
-  </style>
-
-  <!-- Page Styles -->
-  <style>
-    body {
-      color: var(--text-dark);
-      line-height: 1.6;
     }
 
-    /* ---------- Header ---------- */
-    header {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 1rem 2rem;
+    /* Big picture section styles */
+    .big_picture {
       width: 100%;
-    }
-    header img.logo {
-      height: 32px;
+      height: 600px; /* Smaller height so everything fits */
+      overflow: hidden;
+      text-align: center;
+      margin-bottom: 16px;
+      position: relative;
     }
 
-    /* ---------- Hero Section ---------- */
-    .hero {
-      position: relative;
-      min-height: 70vh;
-      background-image: url("assets/placeholder-hero.jpg"); /* ← replace */
-      background-size: cover;
-      background-position: center;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      padding: 2rem 1rem;
+    .big_picture img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Text on top of the big picture */
+    /* Style the text on top of the big picture */
+    .big_picture_text {
+      position: absolute;
+      left: 50%;
+      top: 10%; /* Place the text higher on the image */
+      transform: translate(-50%, -50%);
+      background-color: rgba(255, 255, 255, 0.2); /* Almost transparent background for readability */
+      color: #0077b6; /* Blue color for the text */
+      padding: 16px 24px;
+      border-radius: 8px;
+      font-size: 3.5em; /* Make the text big */
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
       text-align: center;
     }
 
-    h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      font-weight: 700;
-      color: var(--white);
-    }
-
-    p.lead {
-      max-width: 45ch;
-      margin-top: 1rem;
-      color: var(--white);
-      font-size: clamp(0.9rem, 1.4vw, 1.25rem);
-    }
-
-    /* ---------- CTA Blob & Button ---------- */
-    .cta-blob {
+    /* Style for the second big picture text, aligned to the left */
+    .big_picture_text_left {
       position: absolute;
-      right: 0;
-      top: 50%;
+      left: 5%; /* Align to the left side */
+      top: 60%; /* Place it lower on the image */
       transform: translateY(-50%);
-      width: 280px;
-      height: 100%;
-      max-height: 450px;
-      background: var(--navy);
-      border-top-left-radius: 140px;
-      border-bottom-left-radius: 140px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      color: white;
+      padding: 16px 24px;
+      border-radius: 8px;
+      font-size: 1.3em;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      text-align: left;
+      max-width: 400px;
     }
 
-    .donate {
-      background: var(--yellow);
+    /* Center the main content */
+    .container {
+      width: 90%;
+      max-width: 400px; /* Smaller max width */
+      margin: 16px auto 0 auto;
+      background-color: #fff;
+      padding: 12px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    /* Style the main heading */
+    h1 {
+      color: #0077b6;
+      text-align: center;
+      font-size: 1.5em; /* Smaller font size */
+      margin: 10px 0;
+    }
+
+    /* Style the paragraph text */
+    p {
+      color: #333;
+      font-size: 1em;
+      line-height: 1.4;
+      text-align: center;
+      margin: 10px 0;
+    }
+
+    /* Style the donate button */
+    .donate-btn {
+      display: block;
+      width: 100%;
+      padding: 10px;
+      background-color: #FFC907;
       border: none;
-      padding: 1rem 2rem;
-      font-weight: 600;
-      border-radius: 16px;
+      border-radius: 4px;
+      font-size: 1em;
       cursor: pointer;
-      transition: filter 0.2s ease;
-    }
-    .donate:hover {
-      filter: brightness(90%);
+      margin-top: 12px;
+      transition: background 0.2s;
     }
 
-    /* ---------- Mobile Tweaks ---------- */
-    @media (max-width: 768px) {
-      .cta-blob {
-        position: static;
-        width: 100%;
-        height: auto;
-        border-radius: 0;
-        padding: 2rem 0;
-        margin-top: 2rem;
-      }
+    .donate-btn:hover {
+      background-color: #0096c7;
+    }
+
+    /* Logo styles */
+    .hero {
+      text-align: center;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .hero img {
+      width: 120px;
+      height: auto;
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <img src="assets/logo-icon.png" alt="Charity: Water logo icon" class="logo" />
-    <strong>Charity: Water</strong>
-  </header>
+  <!-- Header section with the charity: water logo -->
+  <div class="hero" style="text-align: left; margin-left: 5%;">
+    <!-- Make the logo a bit bigger and align it to the left -->
+    <img src="img/cw_logo-2.png" alt="charity: water logo" style="width: 300px;">
+  </div>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1>Water justice = climate justice</h1>
-    <p class="lead">
-      We build climate‑resilient water projects that empower frontline
-      communities in the face of environmental hardship.
-    </p>
-
-    <div class="cta-blob">
-      <button class="donate">Give&nbsp;Now</button>
+  <!-- Big picture section at the top of the page -->
+  <div class="big_picture">
+    <img src="img/9401_Malawi_2013_TylerRiewer-.jpg" alt="Malawi water project">
+    <div class="big_picture_text">
+      Water Justice = Climate Justice
     </div>
-  </section>
+    <div class="big_picture_text_left">
+      We build climate-resilient water projects that empower frontline communities
+in the face of environmental hardship.
+    </div>
+  </div>
+
+  <!-- Main content container -->
+  <div class="container">
+    <h1>Charity Water</h1>
+    <p>
+      Help bring clean and safe drinking water to people in need.<br>
+      Your donation can change lives!
+    </p>
+    <button class="donate-btn">Donate Now</button>
+  </div>
 </body>
 </html>
